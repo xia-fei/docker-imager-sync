@@ -1,7 +1,7 @@
 name: image-sync
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 
 env:
