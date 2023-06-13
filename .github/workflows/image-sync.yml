@@ -2,10 +2,7 @@ name: image-sync
 on:
   push:
     branches: [master]
-  pull_request:
-    branches: [master]
-  schedule:
-    - cron: "0 15 * * *"
+
 
 env:
   IMAGE_SYNCER_VERSION: v1.3.1
