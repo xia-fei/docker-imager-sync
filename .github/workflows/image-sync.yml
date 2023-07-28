@@ -10,7 +10,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: ${{ xiafei-fei }}
+          username: xia-fei
           password: ${{ secrets.GHCRIOTOKEN }}
       - name: Docker pull and push
         run: |
