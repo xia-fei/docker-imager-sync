@@ -14,6 +14,8 @@ jobs:
           password: ${{ secrets.GHCRIOTOKEN }}
       - name: Docker pull and push
         run: |
-          docker pull gcr.io/kaniko-project/executor:v1.5.1
-          docker tag  gcr.io/kaniko-project/executor:v1.5.1 ghcr.io/xia-fei/executor:v1.5.1       
-          docker push ghcr.io/xia-fei/executor:v1.5.1 
+          orgin=gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/controller:v0.24.1@sha256:d928774533783ce98fdc95f1fa2b7ac3b2c519e8366512a2e65ed9f540e3c0bb
+          mirror=ghcr.io/xia-fei/triggers-controller:v1.5.1
+          docker pull $orgin
+          docker tag  $orgin $mirror      
+          docker push $mirror
