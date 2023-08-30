@@ -14,8 +14,8 @@ jobs:
           password: ${{ secrets.GHCRIOTOKEN }}
       - name: Docker pull and push
         run: |
-          orgin=gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/interceptors:v0.24.1@sha256:162607d0901cd65e525b3563bc19aa55802f0635ca425df05ccc3eb7f420c2e4
-          mirror=ghcr.io/xia-fei/triggers-cmd-interceptors:v0.24.1
+          orgin=gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/eventlistenersink:v0.24.1@sha256:37d41d06d0c306e7b875baa594b9e1ff51ad56d2828703144680b547d56ec2ef
+          mirror=ghcr.io/xia-fei/triggers-cmd-eventlistenersink:v0.24.1
           docker pull $orgin
           docker tag  $orgin $mirror      
           docker push $mirror
