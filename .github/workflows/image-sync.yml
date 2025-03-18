@@ -7,11 +7,7 @@ jobs:
     steps:
       # - uses: actions/checkout@v2
       - name: Login in Docker Registry
-        uses: docker/login-action@v1
-        with:
-          registry: ghcr.io
-          username: xia-fei
-          password: ${{ secrets.GHCRIOTOKEN }}
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u USERNAME --password-stdin
       - name: Docker pull and push
         run: |
           orgin=pgvector/pgvector:0.8.0-pg15
